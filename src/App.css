@@ -1,38 +1,103 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.App{
   min-height: 100vh;
+}
+.text-left{
+  text-align: left!important;
+}
+
+.text-center{
+  text-align: center!important;
+}
+
+.text-right{
+  text-align: right!important;
+}
+
+.app-container{
+  margin-top:70px;
+  margin-left: 90px;
+}
+
+.bg-green {
+  background-color: green;
+}
+
+.accordion-button{
+  width: 60px!important;
+  height: 20px;
+}
+
+.card{
+  height: 100%!important
+}
+
+.d-flex {
   display: flex;
-  flex-direction: column;
+}
+.d-block {
+  display: block;
+}
+.d-inline-block {
+  display: inline-block;
+}
+.d-inline {
+  display: inline;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.w-100 {
+  width: 100vw;
+}
+
+.w-50 {
+  width: 50vw;
+}
+
+.w-25 {
+  width: 25vw;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center{
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.m-auto{
+  margin:auto
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 1.5rem;
+  clear: both;
+  font-weight: 400;
+  color: #7b8a8b;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0; }
+  .dropdown-item:hover, .dropdown-item:focus {
+    color: #18BC9C;
+    text-decoration: none;
+    background-color: #ff6f2f; }
+  .dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #ff6f2f; }
+  .dropdown-item.disabled, .dropdown-item:disabled {
+    color: #95a5a6;
+    pointer-events: none;
+    background-color: transparent; }
+    
