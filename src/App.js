@@ -4,6 +4,7 @@ import './App.css';
 import Insert from './pages/insert';
 import Delete from './pages/delete';
 import Update from './pages/update';
+import Show from './pages/show';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path='/insert' element={<Insert/>} />
           <Route path='/delete' element={<Delete/>} />
           <Route path='/update' element={<Update/>} />
+          <Route path='/show' element={<Show/>} />
       </Routes>
     </Router>
   );

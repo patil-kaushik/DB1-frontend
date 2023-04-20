@@ -11,6 +11,7 @@ const Display = () => {
 
   var  [showName, setshowiName] = useState (true);
   var [showID, setshowid] = useState(true);
+  var [showData, setshowData] = useState(false);
   
   const getItems = async () => {
     let data = {
@@ -28,7 +29,8 @@ const Display = () => {
       }
     ).then((response) => response.json());
     setItems(response.data);
-    console.log(response.data)
+    console.log(items)
+    setshowData(true);
   };
   
   function displayItem() {
@@ -36,24 +38,25 @@ const Display = () => {
   }
 
   function itemIDset(val) {
-    console.log(val)
+    setshowData(false);
     if (val) {
-      console.log(false)
       setshowiName(false);
     }
     else {
-      console.log(true)
       setshowiName(true);
     }
+    setiId(val)
   }
 
   function itemNameset(val) {
+    setshowData(false);
     if(val){
       setshowid(false);
     }
     else {
       setshowid(true);
     }
+    setiName(val)
   }
 
   return (
@@ -86,7 +89,7 @@ const Display = () => {
               </div>}
               <button type="submit" onClick={displayItem} className="submit-btn">Search</button>
             </div>
-            {items && 
+            {(items?.length > 0) && showData && 
             <div>
               <span>Item ID: {items[0][0]}<br></br></span>
               <span>Item Name: {items[0][1]}<br></br></span>
