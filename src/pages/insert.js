@@ -1,5 +1,7 @@
+//Team Members:
+// Kaushik Patil - 1001928970
+// Vivek Yelethotadahalli Srinivas - 1002064152
 import React from "react";
-import SideBar from "../Sidebar/sidebar";
 import "../pages/components.scss";
 import { useState } from "react";
   
@@ -23,12 +25,14 @@ const Insert = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data), 
-    }).then((res) => res.json());
+    }).then((res) => {
+      res.json()
+      alert("Inserted Successfully");
+    });
   }
 
   return (
     <div className="col-md-12">
-        <SideBar />
         <div className="app-container ml-3">
             <div className="row">
               <h2>

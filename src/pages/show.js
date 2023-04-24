@@ -1,5 +1,7 @@
+//Team Members:
+// Kaushik Patil - 1001928970
+// Vivek Yelethotadahalli Srinivas - 1002064152
 import React from "react";
-import SideBar from "../Sidebar/sidebar";
 import "../pages/components.scss";
 import { useState } from "react";
   
@@ -26,7 +28,6 @@ const Show = () => {
 
   return (
     <div className="col-md-12">
-        <SideBar />
         <div className="app-container ml-3">
             <div className="row">
               <h2>
@@ -43,7 +44,7 @@ const Show = () => {
                             <th>Item Name</th>
                             <th>Price</th>
                         </thead>
-                        {items.data.map(({id, name, price}) =>
+                        {items?.data?.map(({id, name, price}) =>
                         <tbody>
                             <td>{id}</td>
                             <td>{name}</td>

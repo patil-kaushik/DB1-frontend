@@ -1,5 +1,7 @@
+//Team Members:
+// Kaushik Patil - 1001928970
+// Vivek Yelethotadahalli Srinivas - 1002064152
 import React from "react";
-import SideBar from "../Sidebar/sidebar";
 import "../pages/components.scss";
 import { useState } from "react";
   
@@ -19,20 +21,22 @@ const Update = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(data), 
-        }).then((res) => res.json());
+        }).then((res) => {
+          res.json();
+          alert("Updated Successfully");
+        });
       }
 
 
   return (
     <div className="col-md-12">
-        <SideBar />
         <div className="app-container ml-3">
             <div className="row">
                 <h2>
                     Update values in 'ITEM' table
                 </h2>
                 <div className="col-md-3">
-                    <span>Enter New Item Name you want the previous added :</span>
+                    <span>Enter New Item Name you want to be updated :</span>
                     <input
                         className=""
                         type="text"

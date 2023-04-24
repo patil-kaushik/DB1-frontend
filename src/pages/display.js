@@ -1,5 +1,7 @@
+//Team Members:
+// Kaushik Patil - 1001928970
+// Vivek Yelethotadahalli Srinivas - 1002064152
 import React from "react";
-import SideBar from "../Sidebar/sidebar";
 import "../pages/components.scss";
 import { useState } from "react";
   
@@ -28,7 +30,7 @@ const Display = () => {
         body: JSON.stringify(data), 
       }
     ).then((response) => response.json());
-    setItems(response.data);
+    setItems(response);
     console.log(items)
     setshowData(true);
   };
@@ -61,7 +63,6 @@ const Display = () => {
 
   return (
     <div className="col-md-12">
-        <SideBar />
         <div className="app-container ml-3">
             <div className="row">
               <h2>
@@ -89,12 +90,22 @@ const Display = () => {
               </div>}
               <button type="submit" onClick={displayItem} className="submit-btn">Search</button>
             </div>
-            {(items?.length > 0) && showData && 
-            <div>
-              <span>Item ID: {items[0][0]}<br></br></span>
-              <span>Item Name: {items[0][1]}<br></br></span>
-              <span>Sprice: {items[0][2]}<br></br></span>
-            </div>}
+            {items && showData && <div>
+                    <table>
+                        <thead>
+                            <th>Item ID</th>
+                            <th>Item Name</th>
+                            <th>Price</th>
+                        </thead>
+                        {items.data.map(({id, name, price}) =>
+                        <tbody>
+                            <td>{id}</td>
+                            <td>{name}</td>
+                            <td>{price}</td>
+                        </tbody>                      
+                        )}
+                    </table>
+                </div>}
         </div>
     </div>
   );
