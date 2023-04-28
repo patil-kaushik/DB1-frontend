@@ -8,10 +8,12 @@ import { useState } from "react";
 const Update = () => {
 
     const [iName, setiName] = useState ("");
+    const [niName, setniName] = useState ("");
 
     function updateItem() {
         let data = {
-          "name" : iName
+          "name" : iName, 
+          "name2": niName
         }
         console.log(data)
     
@@ -36,13 +38,23 @@ const Update = () => {
                     Update values in 'ITEM' table
                 </h2>
                 <div className="col-md-3">
-                    <span>Enter New Item Name you want to be updated :</span>
+                    <span>Enter Old Item Name to be updated :</span>
                     <input
                         className=""
                         type="text"
                         placeholder="Item Name"
                         required
                         onChange={e => setiName(e.target.value)}
+                    />
+                </div>
+                <div className="col-md-3">
+                    <span>Enter New Item Name :</span>
+                    <input
+                        className=""
+                        type="text"
+                        placeholder="Item Name"
+                        required
+                        onChange={e => setniName(e.target.value)}
                     />
                 </div>
                 <button type="submit" onClick={updateItem} className="submit-btn">Update</button>

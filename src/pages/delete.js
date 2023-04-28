@@ -3,12 +3,15 @@
 // Vivek Yelethotadahalli Srinivas - 1002064152
 import React from "react";
 import "../pages/components.scss";
+import { useState } from "react";
   
 const Delete = () => {
 
+  const [iName, setiName] = useState ("");
+
   function deleteItem() {
     let data = {
-      "name" : "Carrot Sprouts"
+      "name" : iName
     }
     fetch(`http://127.0.0.1:5000/deleteitem`, {
       method: "POST",
@@ -29,8 +32,15 @@ const Delete = () => {
               <h2>
                   Delete values from 'ITEM' table
               </h2>
-                <div className="col-md-3">
-                  Click the below button to delete the item you added recently  
+              <div className="col-md-3">
+                    <span>Enter Item Name to be Deleted :</span>
+                    <input
+                        className=""
+                        type="text"
+                        placeholder="Item Name"
+                        required
+                        onChange={e => setiName(e.target.value)}
+                    />
                 </div>
                 <button type="submit" onClick={deleteItem} className="submit-btn">Delete</button>
             </div>
